@@ -1,0 +1,14 @@
+name: Execute Shell Script
+on: push
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4 
+
+            - name: List repo files
+              run: ls -lart
+
+            - name: List and Read file
+              run: ./shell_script.sh
