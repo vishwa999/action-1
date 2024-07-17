@@ -1,7 +1,7 @@
 name: My first workflow
 on: push
 jobs:
-    first_job:
+    first_job_from_first_example:
         runs-on: ubuntu-latest
         steps:
             - name: checkout repo
