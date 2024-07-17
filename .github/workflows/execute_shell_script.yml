@@ -8,7 +8,15 @@ jobs:
               uses: actions/checkout@v4 
 
             - name: List repo files
-              run: ls -lart
+              run: | 
+                    ls -lart
+                    chmod +x ./shell_script.sh               
 
             - name: List and Read file
               run: ./shell_script.sh
+    
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: validate shell script
+            run: grep -i "Hello" ./shell_script.sh
