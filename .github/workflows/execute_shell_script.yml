@@ -19,4 +19,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: validate shell script
-            run: grep -i "Hello" ./shell_script.sh
+            run: grep -i "first" sample_text.txt
