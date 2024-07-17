@@ -1,0 +1,19 @@
+name: Run multiple jobs
+on: push
+jobs:
+  first_multi_job:
+    runs-on: ubuntu-latest
+    steps:
+            - name: checkout repo
+              uses: actions/checkout@v4 
+
+            - name: List and Read file
+              run: | 
+                   echo " My first github action" >> sample_text.txt
+                   ls -lart 
+
+  second_multi_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: validate shell script
+        run: grep -i "first" sample_text.txt

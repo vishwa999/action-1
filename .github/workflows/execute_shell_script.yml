@@ -15,8 +15,3 @@ jobs:
             - name: List and Read file
               run: ./shell_script.sh
     
-    test_job_from_execute_shell:
-        runs-on: ubuntu-latest
-        steps:
-          - name: validate shell script
-            run: grep -i "first" sample_text.txt
