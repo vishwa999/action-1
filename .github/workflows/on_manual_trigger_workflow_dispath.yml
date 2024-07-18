@@ -21,7 +21,7 @@ jobs:
     needs: first_multi_job
     concurrency: 
         group: Testing_Group
-        cancel-in-progress: true
+        cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
      - name: download te file
