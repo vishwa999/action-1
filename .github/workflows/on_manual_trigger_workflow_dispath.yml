@@ -19,15 +19,20 @@ jobs:
 
   second_multi_job:
     needs: first_multi_job
+    concurrency: 
+        group: Testing_Group
+        cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
      - name: download te file
        uses: actions/download-artifact@v4
        with:
          name: my-artifact_file_from_previous_step
+         run: sleep 60s
 
      - name: validate shell script
        run: grep -i "first" sample_text.txt
+    
   
   deploy_multi_job:
     needs: [first_multi_job,second_multi_job]
@@ -37,6 +42,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
          name: my-artifact_file_from_previous_step
+         
 
       - name: deploy the build
         run: cat sample_text.txt
+        
+    
