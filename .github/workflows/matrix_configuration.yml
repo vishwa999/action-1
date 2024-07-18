@@ -1,5 +1,5 @@
 name: WorkFloW_Dispath_Manually_trigger
-on: workflow_dispatch
+on: push
 jobs:
   deploy:
     strategy:
