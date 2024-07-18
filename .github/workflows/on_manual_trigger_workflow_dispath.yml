@@ -29,10 +29,12 @@ jobs:
        uses: actions/download-artifact@v4
        with:
          name: my-artifact_file_from_previous_step
-         run: sleep 60000s
-
+         
      - name: validate shell script
-       run: grep -i "first" sample_text.txt
+       run: | 
+            grep -i "first" sample_text.txt
+            sleep 60000s
+
     
   
   deploy_multi_job:
