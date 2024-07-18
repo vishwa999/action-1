@@ -1,4 +1,4 @@
-name: Run multiple jobs
+name: WorkFloW_Dispath_Manually_trigger
 on: workflow_dispatch
 jobs:
   first_multi_job:
